@@ -75,7 +75,7 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
-        select_word: select_word_left {
+        select_word_left: select_word_left {
             compatible = "zmk,behavior-macro";
             bindings
                 = <&macro_press &kp LSHFT>
