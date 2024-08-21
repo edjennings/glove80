@@ -18,6 +18,11 @@
 #define SYMBOL 1
 #define MAGIC 2
 
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
     behaviors {
         magic: magic_hold_tap {
@@ -28,6 +33,7 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+
     };
 
     macros {
@@ -105,10 +111,6 @@
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
         };
-    };
-
-    &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
     };
 
     keymap {
