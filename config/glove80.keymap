@@ -85,6 +85,17 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
+        select_word_right: select_word_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_press &kp LCTRL>
+                , <&macro_tap &kp RIGHT_ARROW>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
         ht_tp: holdtap_tappreferred {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_TAP_PREFERRED";
@@ -94,6 +105,10 @@
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
         };
+    };
+
+    &caps_word {
+    continue-list = <UNDERSCORE MINUS>;
     };
 
     keymap {
@@ -113,19 +128,21 @@
             &kp EQUAL      &kp N1         &kp N2        &kp N3           &kp N4         &kp N5                                                                               &kp N6  &kp N7          &kp N8            &kp N9         &kp N0              &kp MINUS
             &kp TAB        &kp Q          &kp W         &kp E            &kp R          &kp T                                                                                &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S &ht_tp LCTRL D   &ht_tp LSHFT F &kp G                                                                                &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X         &kp C            &kp V          &kp B   &sk LSHFT         &kp LCTRL    &kp LSHFT    &kp LGUI  &kp RCTRL &sl SYMBOL   &kp N   &kp M           &kp COMMA         &kp DOT        &kp FSLH            &kp PG_UP
-            &magic MAGIC 0 &kp HOME       &kp END       &kp LEFT         &kp RIGHT              &lt SYMBOL BSPC    &kp TAB     &caps_word   &kp TAB   &kp RET   &kp SPACE            &kp UP          &kp DOWN          &kp QMARK      &kp EXCL            &kp PG_DN
+            &kp GRAVE      &kp Z          &kp X         &kp C            &kp V          &kp B   &kp CAPS          &kp LCTRL    &kp LSHFT    &kp LGUI  &sk LSHFT &sl SYMBOL   &kp N   &kp M           &kp COMMA         &kp DOT        &kp FSLH            &kp PG_UP
+            &magic MAGIC 0 &kp HOME       &kp END       &kp LEFT         &kp RIGHT              &lt SYMBOL BSPC    &kp DEL     &caps_word   &kp TAB   &kp RET   &kp SPACE            &kp UP          &kp DOWN          &kp QMARK      &kp EXCL            &kp PG_DN
             >;
         };
 
+        // think about potential mod morphing for symbols
+        // think about new layer for directions without selecting
         SYMBOL {
             bindings = <
             &none            &none               &none           &none           &none                                                                                               &none         &none             &none         &none &none             
-            &none            &none               &kp SQT         &kp LS(SQT)     &none           &none                                                                      &none    &none         &none             &none         &none &none
+            &none            &none               &kp SQT         &kp LS(SQT)     &kp LS(N2)           &none                                                                      &none    &none         &none             &none         &none &none
             &none            &none               &kp LT          &kp LS(N3)      &kp GT          &none                                                                      &none    &none         &none             &none         &none &none  
-            &none            &none               &kp LPAR        &kp UNDER       &kp RPAR        &none                                                                      &none    &kp LC(A)     &select_word_left &none         &none &none  
-            &none            &none               &kp LBKT        &kp MINUS       &kp RBKT        &none      &none      &none      &none      &none      &none      &none    &none    &none         &kp LS(HOME)      &none         &none &none         
-            &none            &none               &none           &none           &none                      &none      &none      &none      &none      &none      &none             &none         &none             &none         &none &none 
+            &none            &kp LS(EQUAL)              &kp LPAR        &kp UNDER       &kp RPAR        &none                                                                      &none    &kp LC(A)     &select_word_left &select_word_right         &none &none  
+            &none            &none                &kp LBKT        &kp MINUS       &kp RBKT        &none      &none      &kp LS(N7)      &none      &none      &none      &none    &none    &none         &kp LS(HOME)      &kp LS(END)          &none &none         
+            &none            &none               &kp LS(LBKT)           &kp EQUAL           &kp LS(RBKT)                      &kp LS(SEMI)      &kp LS(N8)      &none      &none      &none      &none             &none         &none             &none         &none &none 
             >;
         };
 
