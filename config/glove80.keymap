@@ -118,12 +118,12 @@
 
         DEFAULT {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
-            // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                                 |  Y   |   U   |   I   |  O   |   P   |   \  |
-            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
-            // |   `   |  Z  |  X  |  C   |  V   |  B   | sl LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | sl symbol_l  |  N   |   M   |   ,   |  .   |   /   | PGUP |
-            // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC/symbol_l  | tab   | caps word  | | TAB  | RET   | SPACE |      |  UP   | DOWN  |  QMARK   |   EXCL   | PGDN |
+            // |  F1   |  F2      |  F3      |  F4        |  F5        |                                                                                   |  F6         |  F7         |  F8       |   F9       |  F10 |
+            // |  =    |  1       |  2       |   3        |  4         |  5   |                                                                     |  6   |   7         |   8         |  9        |   0        |   -  |
+            // |  TAB  |  Q       |  W       |  E         |  R         |  T   |                                                                     |  Y   |   U         |   I         |  O        |   P        |   \  |
+            // |  ESC  |  LWIN/A  |  LALT/S  |  LCTRL/D   |  LSHFT/F   |  G   |                                                                     |  H   |   LSHFT/J   |   RCTRL/K   |  RALT/L   |   RWIN/;   |   '  |
+            // |   `   |  Z       |  X       |  C         |  V         |  B   | sk LSHFT       | LCTRL | LSHFT      | | LGUI | CAPS  | sl symbol_l  |  N   |   M         |   ,         |  .        |   /        | PGUP |
+            // | MAGIC | HOME     | END      | LEFT       | RIGHT      |      | BSPC/symbol_l  | DEL   | caps word  | | TAB  | RET   | SPACE        |      |  UP         | DOWN        |  QMARK    |   EXCL     | PGDN |
 
             bindings = <        
             &kp F1         &kp F2         &kp F3        &kp F4           &kp F5                                                                                                      &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
@@ -137,6 +137,16 @@
 
         // think about potential mod morphing for symbols
         // think about new layer for directions without selecting
+        
+         // ---------------------------------------------------------------------------------------------------------------------------------
+            // |     |     |     |     |     |                                                     |      |      |     |     |     |     
+            // |     |     | '   | "   | @   |     |                                          |    |      |      |     |     |     |          
+            // |     |     | <   | @   | >   |     |                                          |    |      |      |     |     |     |         
+            // |     | +   | (   | _   | )   | "   |                                          |    |selall|swl   | swr |     |     |     
+            // |     |     | [   | -   | ]   | '   |     | &   |     | |     |     |    |     |    |      |sll   |slr  |     |     |
+            // |     |     | {   | =   | }   |     | :   | *   |     | |     |     |    |     |    |      |      |     |     |     |
+
+
         SYMBOL {
             bindings = <
             &none            &none               &none           &none           &none                                                                                                             &none         &none             &none                      &none &none             
@@ -160,3 +170,10 @@
         };
     };
 };
+            // |     |     |     |     |     |                                                             |     |     |     |     |     |     
+            // |     |     |     |     |     |     |                                                 |     |     |     |     |     |     |     
+            // |     |     |     |     |     |     |                                                 |     |     |     |     |     |     |     
+            // |     |     |     |     |     |     |                                                 |     |     |     |     |     |     |     
+            // |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     
+            // |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     
+
