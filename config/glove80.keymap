@@ -20,7 +20,7 @@
 
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS FSLH>;
 };
 
 / {
@@ -111,6 +111,16 @@
             quick-tap-ms = <0>;
             bindings = <&kp>, <&kp>;
         };
+        ht_lt: holdtap_layertap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&tog>, <&kp>;
+        };
+ 
     };
 
     keymap {
@@ -118,20 +128,20 @@
 
         DEFAULT {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2      |  F3      |  F4        |  F5        |                                                                                     |  F6         |  F7         |  F8       |   F9       |  F10 |
-            // |  =    |  1       |  2       |   3        |  4         |  5   |                                                                       |  6   |   7         |   8         |  9        |   0        |   -  |
-            // |  TAB  |  Q       |  W       |  E         |  R         |  T   |                                                                       |  Y   |   U         |   I         |  O        |   P        |   \  |
-            // |  ESC  |  LWIN/A  |  LALT/S  |  LCTRL/D   |  LSHFT/F   |  G   |                                                                       |  H   |   LSHFT/J   |   RCTRL/K   |  RALT/L   |   RWIN/;   |   '  |
-            // |   `   |  Z       |  X       |  C         |  V         |  B   | sk LSHFT | LCTRL         | LSHFT      | | LGUI | CAPS  | sl symbol_l  |  N   |   M         |   ,         |  .        |   ?        | PGUP |
-            // | MAGIC | HOME     | END      | LEFT       | RIGHT      |      | BSPC/    | DEL/symbol_l  | caps word  | | TAB  | RET   | SPACE        |      |  UP         | DOWN        |  FSLH     |   EXCL     | PGDN |
+            // |  F1   |  F2      |  F3          |  F4        |  F5        |                                                                            |  F6         |  F7         |  F8       |   F9       |  F10 |
+            // |  =    |  1       |  2           |   3        |  4         |  5   |                                                              |  6   |   7         |   8         |  9        |   0        |   -  |
+            // |  TAB  |  Q       |  W           |  E         |  R         |  T   |                                                              |  Y   |   U         |   I         |  O        |   P        |   \  |
+            // |  ESC  |  LWIN/A  |  symbol_l/S  |  LCTRL/D   |  LSHFT/F   |  G   |                                                              |  H   |   LSHFT/J   |   RCTRL/K   |  RALT/L   |   RWIN/;   |   '  |
+            // |   `   |  Z       |  LALT/X      |  C         |  V         |  B   | caps word | LCTRL    | LSHFT | | LGUI | CAPS  | sl symbol_l  |  N   |   M         |   ,         |  .        |   ?        | PGUP |
+            // | MAGIC | HOME     | END          | LEFT       | RIGHT      |      | BSPC      | sk LSHFT | del   | | TAB  | RET   | SPACE        |      |  UP         | DOWN        |  FSLH     |   EXCL     | PGDN |
 
             bindings = <        
-            &kp F1         &kp F2         &kp F3        &kp F4           &kp F5                                                                                                      &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
-            &kp EQUAL      &kp N1         &kp N2        &kp N3           &kp N4         &kp N5                                                                               &kp N6  &kp N7          &kp N8            &kp N9         &kp N0              &kp MINUS
-            &kp TAB        &kp Q          &kp W         &kp E            &kp R          &kp T                                                                                &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
-            &kp ESC        &ht_tp LWIN A  &ht_tp LALT S &ht_tp LCTRL D   &ht_tp LSHFT F &kp G                                                                                &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X         &kp C            &kp V          &kp B   &sk LSHFT       &kp LCTRL       &kp LSHFT    &kp LGUI  &kp CAPS &sl SYMBOL   &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
-            &magic MAGIC 0 &kp HOME       &kp END       &kp LEFT         &kp RIGHT              &kp BSPC        &lt SYMBOL DEL  &caps_word   &kp TAB   &kp RET   &kp SPACE           &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
+            &kp F1         &kp F2         &kp F3            &kp F4           &kp F5                                                                                             &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
+            &kp EQUAL      &kp N1         &kp N2            &kp N3           &kp N4         &kp N5                                                                      &kp N6  &kp N7          &kp N8            &kp N9         &kp N0              &kp MINUS
+            &kp TAB        &kp Q          &kp W             &kp E            &kp R          &kp T                                                                       &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
+            &kp ESC        &ht_tp LWIN A  &ht_lt symbol_l S &ht_tp LCTRL D   &ht_tp LSHFT F &kp G                                                                       &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
+            &kp GRAVE      &kp Z          &ht_tp LALT X     &kp C            &kp V          &kp B   &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &sl SYMBOL   &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
+            &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT         &kp RIGHT              &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET   &kp SPACE           &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
 
@@ -140,20 +150,20 @@
         
          // ---------------------------------------------------------------------------------------------------------------------------------
             // |     |     |     |     |     |                                                     |      |      |     |     |     |     
-            // |     |     | '   | "   | @   |     |                                          |    |      |      |     |     |     |          
+            // |     |     | '   | !   | /   |     |                                          |    |      |      |     |     |     |          
             // |     |     | <   | @   | >   |     |                                          |    |      |      |     |     |     |         
             // |     | +   | (   | _   | )   | "   |                                          |    |selall|swl   | swr |     |     |     
-            // |     |     | [   | -   | ]   | '   |     | &   |     | |     |     |    |     |    |      |sll   |slr  |     |     |
+            // |     |     | [   | -   | ]   | '   |     | &   |     | |     |     |    |     |    |tog symbol_l      |sll   |slr  |     |     |
             // |     |     | {   | =   | }   |     | :   | *   |     | |     |     |    |     |    |      |      |     |     |     |
 
 
         SYMBOL {
             bindings = <
             &none            &none               &none           &none           &none                                                                                                             &none         &none             &none                      &none &none             
-            &none            &none               &kp SQT         &kp LS(SQT)     &kp LS(N2)      &none                                                                                    &none    &none         &none             &none                      &none &none
+            &none            &none               &kp SQT         &kp EXCL        &kp FSLH        &none                                                                                    &none    &none         &none             &none                      &none &none
             &none            &none               &kp LT          &kp LS(N2)      &kp GT          &none                                                                                    &none    &none         &none             &none                      &none &none  
             &none            &kp LS(EQUAL)       &kp LPAR        &kp UNDER       &kp RPAR        &kp LS(SQT)                                                                              &none    &kp LC(A)     &select_word_left &select_word_right         &none &none  
-            &none            &none               &kp LBKT        &kp MINUS       &kp RBKT        &kp SQT      &none             &kp LS(N7)      &none      &none      &none      &none    &none    &none         &kp LS(HOME)      &kp LS(END)                &none &none                
+            &none            &none               &kp LBKT        &kp MINUS       &kp RBKT        &kp SQT      &none             &kp LS(N7)      &none      &none      &none      &none    &none    &tog symbol_l &kp LS(HOME)      &kp LS(END)                &none &none                
             &none            &none               &kp LS(LBKT)    &kp EQUAL       &kp LS(RBKT)                 &kp LS(SEMI)      &kp LS(N8)      &none      &none      &none      &none             &none         &none             &none                      &none &none 
             >;
         };
