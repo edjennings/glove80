@@ -36,7 +36,7 @@
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
 
-        layer_switch_type {
+        layer_switch_type: l_s_t {
             compatible = "zmk, behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sl>, <&tog>;
