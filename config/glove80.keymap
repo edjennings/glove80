@@ -38,7 +38,7 @@
 
         layer_switch_type {
             compatible = "zmk, behavior-mod-morph";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings = <&sl>, <&tog>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
@@ -146,10 +146,10 @@
 
             bindings = <        
             &kp F1         &kp F2         &kp F3            &kp F4                              &kp F5                                                                                                                                            &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
-        &kp EQUAL      &kp N1         &kp N2            &layer_switch_type SYMBOL SYMBOL    &layer_switch_type NUM NUM       &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
+        &kp EQUAL      &kp N1         &kp N2            &layer_switch_type SYMBOL     &layer_switch_type NUM        &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
             &kp TAB        &kp Q          &kp W             &kp E                               &kp R                            &kp T                                                                                                    &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S     &ht_tp LCTRL D                      &ht_tp LSHFT F                   &kp G                                                                                                    &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &layer_switch_type SYMBOL SYMBOL   &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
+            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &layer_switch_type SYMBOL    &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
             &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
@@ -211,10 +211,10 @@
 
             bindings = <        
             &kp F1         &kp F2         &kp F3            &kp F4                              &kp F5                                                                                                                                            &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
-        &kp EQUAL      &kp N1         &kp N2            &layer_switch_type SYMBOL SYMBOL    &layer_switch_type NUM NUM       &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
+        &kp EQUAL      &kp N1         &kp N2            &layer_switch_type SYMBOL     &layer_switch_type NUM        &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
             &kp TAB        &kp Q          &kp W             &kp E                               &kp R                            &kp T                                                                                                    &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S     &ht_tp LCTRL D                      &ht_tp LSHFT F                   &kp G                                                                                                    &kp H   &kp J &kp K    &kp  L  &kp  SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &kp ESC     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &layer_switch_type SYMBOL SYMBOL   &kp N   &ht_tp  LSHFT M &ht_tp RCTRL COMMA    &ht_tp RALT DOT  &ht_tp RWIN QMARK           &kp PG_UP
+            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &kp ESC     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &layer_switch_type SYMBOL    &kp N   &ht_tp  LSHFT M &ht_tp RCTRL COMMA    &ht_tp RALT DOT  &ht_tp RWIN QMARK           &kp PG_UP
             &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
