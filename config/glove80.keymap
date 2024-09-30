@@ -40,7 +40,7 @@
             compatible = "zmk, behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sl>, <&tog>;
-            mods = <(MOD_LCTRL|MOD_RCTRL)>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
         };
         ht_tp: holdtap_tappreferred {
             compatible = "zmk,behavior-hold-tap";
