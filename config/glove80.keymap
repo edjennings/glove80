@@ -37,7 +37,7 @@
         };
 
         layer_switch_type {
-            compatible = "zmk, behavior-mod-morph"
+            compatible = "zmk, behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sl>, <&tog>;
             mods = <(MOD_LCTRL|MOD_RCTRL)>;
