@@ -35,32 +35,6 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
-
-        layer_switch_type: layer_switch_type {
-            compatible = "zmk, behavior-mod-morph";
-            #binding-cells = <2>;
-            bindings = <&sl>, <&tog>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-        ht_tp: holdtap_tappreferred {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_TAP_PREFERRED";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&kp>, <&kp>;
-        };
-        ht_lt: holdtap_layertap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_LAYER_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&tog>, <&kp>;
-        };
- 
  
     };
 
@@ -128,8 +102,35 @@
                 , <&macro_tap &kp RIGHT_ARROW>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp LCTRL>
-                ;
+                ; 
         };
+        
+         layer_switch_type: layer_switch_type {
+            compatible = "zmk, behavior-mod-morph";
+            #binding-cells = <2>;
+            bindings = <&sl>, <&tog>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        ht_tp: holdtap_tappreferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_TAP_PREFERRED";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
+        };
+        ht_lt: holdtap_layertap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&tog>, <&kp>;
+        };
+ 
+
       };
 
     keymap {
