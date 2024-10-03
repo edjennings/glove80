@@ -105,14 +105,14 @@
                 ; 
         };
         
-         lst_symbol : layer_switch_type_symbol {
+         lst_symbol: layer_switch_type_symbol {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sl SYMBOL>, <&tog SYMBOL>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-          lst_num : layer_switch_type_num {
+          lst_num: layer_switch_type_num {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sl NUM>, <&tog NUM>;
