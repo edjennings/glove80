@@ -105,12 +105,20 @@
                 ; 
         };
         
-         layer_switch_type: layer_switch_type {
+         lst_symbol : layer_switch_type_symbol {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <2>;
-            bindings = <&sl>, <&tog>;
+            #binding-cells = <0>;
+            bindings = <&sl SYMBOL>, <&tog SYMBOL>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
+
+          lst_num : layer_switch_type_num {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&sl NUM>, <&tog NUM>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        
         ht_tp: holdtap_tappreferred {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_TAP_PREFERRED";
@@ -139,18 +147,18 @@
         DEFAULT {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  F1   |  F2      |  F3          |  F4                                       |  F5                                 |                                                                                                            |  F6         |  F7         |  F8       |   F9       |  F10 |
-            // |  =    |  1       |  2           |   &layer_switch_type SYMBOL SYMBOL        |  &layer_switch_type NUM NUM         |  &ht_lt VIM N5   |                                                                                  |  6   |   7         |   sk LSHFT  |  9        |   0        |   -  |
+            // |  =    |  1       |  2           |   lst_symbol        |  lst_num         |  &ht_lt VIM N5   |                                                                                  |  6   |   7         |   sk LSHFT  |  9        |   0        |   -  |
             // |  TAB  |  Q       |  W           |  E                                        |  R                                  |  T               |                                                                                  |  Y   |   U         |   I         |  O        |   P        |   \  |
             // |  ESC  |  LWIN/A  |  LALT/S      |  LCTRL/D                                  |  LSHFT/F                            |  G               |                                                                                  |  H   |   LSHFT/J   |   RCTRL/K   |  RALT/L   |   RWIN/;   |   '  |
-            // |   `   |  Z       |  X           |  C                                        |  V                                  |  B               | caps word | LCTRL    | LSHFT | | LGUI | CAPS  | &layer_switch_type SYMBOL SYMBOL |  N   |   M         |   ,         |  .        |   ?        | PGUP |
+            // |   `   |  Z       |  X           |  C                                        |  V                                  |  B               | caps word | LCTRL    | LSHFT | | LGUI | CAPS  | lst_symbol |  N   |   M         |   ,         |  .        |   ?        | PGUP |
             // | MAGIC | HOME     | END          | LEFT                                      | RIGHT                               |                  | BSPC      | sk LSHFT | del   | | TAB  | RET   | SPACE                            |      |  UP         | DOWN        |  FSLH     |   EXCL     | PGDN |
 
             bindings = <        
             &kp F1         &kp F2         &kp F3            &kp F4                              &kp F5                                                                                                                                            &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
-        &kp EQUAL      &kp N1         &kp N2            &layer_switch_type SYMBOL SYMBOL     &layer_switch_type NUM NUM        &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
+        &kp EQUAL      &kp N1         &kp N2            lst_symbol     lst_num        &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
             &kp TAB        &kp Q          &kp W             &kp E                               &kp R                            &kp T                                                                                                    &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S     &ht_tp LCTRL D                      &ht_tp LSHFT F                   &kp G                                                                                                    &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &layer_switch_type SYMBOL SYMBOL    &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
+            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS lst_symbol    &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
             &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
@@ -204,18 +212,18 @@
          VIM {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  F1   |  F2      |  F3          |  F4                                       |  F5                                 |                                                                                                            |  F6         |  F7         |  F8       |   F9       |  F10 |
-            // |  =    |  1       |  2           |   &layer_switch_type SYMBOL SYMBOL        |  &layer_switch_type NUM NUM         |  &ht_lt VIM N5   |                                                                                  |  6   |   7         |   sk LSHFT  |  9        |   0        |   -  |
+            // |  =    |  1       |  2           |   lst_symbol        |  lst_num         |  &ht_lt VIM N5   |                                                                                  |  6   |   7         |   sk LSHFT  |  9        |   0        |   -  |
             // |  TAB  |  Q       |  W           |  E                                        |  R                                  |  T               |                                                                                  |  Y   |   U         |   I         |  O        |   P        |   \  |
             // |  ESC  |  LWIN/A  |  LALT/S      |  LCTRL/D                                  |  LSHFT/F                            |  G               |                                                                                  |  H   |   LSHFT/J   |   RCTRL/K   |  RALT/L   |   RWIN/;   |   '  |
-            // |   `   |  Z       |  X           |  C                                        |  V                                  |  B               | caps word | LCTRL    | LSHFT | | LGUI | CAPS  | &layer_switch_type SYMBOL SYMBOL |  N   |   M         |   ,         |  .        |   ?        | PGUP |
+            // |   `   |  Z       |  X           |  C                                        |  V                                  |  B               | caps word | LCTRL    | LSHFT | | LGUI | CAPS  | lst_symbol |  N   |   M         |   ,         |  .        |   ?        | PGUP |
             // | MAGIC | HOME     | END          | LEFT                                      | RIGHT                               |                  | BSPC      | sk LSHFT | del   | | TAB  | RET   | SPACE                            |      |  UP         | DOWN        |  FSLH     |   EXCL     | PGDN |
 
             bindings = <        
             &kp F1         &kp F2         &kp F3            &kp F4                              &kp F5                                                                                                                                            &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
-        &kp EQUAL      &kp N1         &kp N2            &layer_switch_type SYMBOL SYMBOL     &layer_switch_type NUM NUM        &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
+        &kp EQUAL      &kp N1         &kp N2            lst_symbol     lst_num        &ht_lt VIM N5                                                                                                &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
             &kp TAB        &kp Q          &kp W             &kp E                               &kp R                            &kp T                                                                                                    &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S     &ht_tp LCTRL D                      &ht_tp LSHFT F                   &kp G                                                                                                    &kp H   &kp J &kp K    &kp  L  &kp  SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &kp ESC     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &layer_switch_type SYMBOL SYMBOL    &kp N   &ht_tp  LSHFT M &ht_tp RCTRL COMMA    &ht_tp RALT DOT  &ht_tp RWIN QMARK           &kp PG_UP
+            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &kp ESC     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS lst_symbol    &kp N   &ht_tp  LSHFT M &ht_tp RCTRL COMMA    &ht_tp RALT DOT  &ht_tp RWIN QMARK           &kp PG_UP
             &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
