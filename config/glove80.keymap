@@ -155,7 +155,7 @@
             bindings = <&select_word_left>; 
         };
 
-    }
+    };
 
 
 
