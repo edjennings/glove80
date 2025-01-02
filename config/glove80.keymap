@@ -154,6 +154,20 @@
             bindings = <&select_word_left>; 
         };
 
+        combo_spc {
+            timeout-ms = <50>;
+            key-positions = <53 54>;
+            bindings = <&kp SPACE>; 
+        };
+        
+        combo_ret {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp RET>; 
+        };
+
+
+        
     };
 
 
