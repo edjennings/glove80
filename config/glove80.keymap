@@ -92,18 +92,16 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        select_word_right: select_word_right {
+        select_line_left: select_line_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
-                , <&macro_press &kp LCTRL>
-                , <&macro_tap &kp RIGHT_ARROW>
+                , <&macro_tap &kp HOME>
                 , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LCTRL>
-                ; 
-        };
-        
+                ;
+        };  
+       
          lst_symbol: layer_switch_type_symbol {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -142,36 +140,32 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&kp BSPC>; 
-        };
-
-        combo_slw {
+        
+        combo_swl {
             timeout-ms = <50>;
             key-positions = <49 50>;
             bindings = <&select_word_left>; 
         };
-
-        combo_spc {
-            timeout-ms = <50>;
-            key-positions = <59 60>;
-            bindings = <&kp SPACE>; 
-        };
         
-        combo_ret {
+        combo_esc {
             timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp RET>; 
+            key-positions = <38 39>;
+            bindings = <&kp ESC>; 
         };
-
+ 
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <48 49>;
-            bindings = <&kp TAB>; 
+            key-positions = <>;
+            bindings = <&kp ESC>; 
         };
 
+        
+        
+        combo_sll {
+            timeout-ms = <50>;
+            key-positions = <48 49>;
+            bindings = <&select_line_left>; 
+        };
 
         
     };
@@ -195,10 +189,10 @@
 
             bindings = <        
             &kp F1         &kp F2         &kp F3            &kp F4                              &kp F5                                                                                                                                            &kp F6          &kp F7            &kp F8         &kp F9              &kp F10
-            &kp EQUAL      &kp N1         &kp N2            &lst_symbol                         &lst_num                         &ht_lt VIM N5                                                                                            &kp N6  &kp N7          &kp SPACE         &kp N9         &kp N0              &kp MINUS
+            &kp EQUAL      &kp N1         &kp N2            &lst_symbol                         &lst_num                         &ht_lt VIM N5                                                                                            &kp N6  &kp N7          &sk LSHFT         &kp N9         &kp N0              &kp MINUS
             &kp TAB        &kp Q          &kp W             &kp E                               &kp R                            &kp T                                                                                                    &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S     &ht_tp LCTRL D                      &ht_tp LSHFT F                   &kp G                                                                                                    &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
-            &kp GRAVE      &kp Z          &kp X             &kp C                               &kp V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &lst_symbol                        &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
+            &kp GRAVE      &kp Z          &kp X             &kp C                               &lt NUM V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &lst_symbol                        &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
             &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
@@ -228,20 +222,20 @@
         
             // |     |     |     |     |     |                                                                       |     |     |     |     |     |     
             // |     |     |     |     |     |     |                                                           |     |     |     |     |     |     |
-            // |     |     |     |     |     |     |                                                           |     |  7  | 8   | 9   |     |     |     
-            // |     |     |     |     |     |     |                                                           |     |  4  | 5   | 6   |     |     |     
-            // |     |     |     |     |     |     |     |     |     |     |     |     |       |  Layer Off    |     |  1  |  2  | 3   |     |     
-            // |     |     |     |     |     |     |     |     |     |     |     |     | RET   |               |     |     |     |     |     |     
+            // |     |     |     |     |     |     |                                                           | G    |  7  | 8   | 9   |     |     |     
+            // |     |     |     |     |     |     |                                                           | k    |  4  | 5   | 6   |     |     |     
+            // |     |     |     |     |     |     |     |     |     |     |     |     |       |  Layer Off    | j    |  1  |  2  | 3   |     |     
+            // |     |     |     |     |     |     |     |     |     |     |     |     | RET   |     0          |     |     |     |     |     |     
 
  
         NUM {
             bindings = <
             &none           &none        &none        &none        &none                                                                                                                &none        &none        &none        &none        &none             
             &none           &none        &none        &none        &none        &none                                                                                      &none        &none        &none        &none        &none        &none
-            &none           &none        &none        &none        &none        &none                                                                                      &none         &kp N7        &kp N8        &kp N9      &none        &none  
-            &none           &none        &none        &none        &none        &none                                                                                      &none         &kp N4        &kp N5        &kp N6         &none        &none  
-            &none           &none        &none        &none        &none        &none        &none        &none        &none        &none        &none        &tog NUM     &none        &kp N1        &kp N2        &kp N3        &none        &none                
-            &none           &none        &none        &none        &none                     &none        &none        &none        &none        &kp RET        &none                      &none        &none        &none        &none        &none 
+            &none           &none        &none        &none        &none        &none                                                                                      &kp LS(G)    &kp N7        &kp N8        &kp N9      &none        &none  
+            &none           &none        &none        &none        &none        &none                                                                                      &kp k        &kp N4        &kp N5        &kp N6         &none        &none  
+            &none           &none        &none        &none        &none        &none        &none        &none        &none        &none        &none        &tog NUM     &kp j        &kp N1        &kp N2        &kp N3        &none        &none                
+            &none           &none        &none        &none        &none                     &none        &none        &none        &none &none        &kp N0                      &kp COMMA        &kp DOT        &kp LS(N5)        &none        &none 
             >;
         };
 
