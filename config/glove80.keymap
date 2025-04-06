@@ -193,7 +193,7 @@
             &kp TAB        &kp Q          &kp W             &kp E                               &kp R                            &kp T                                                                                                    &kp Y   &kp U           &kp I             &kp O          &kp P               &kp BSLH
             &kp ESC        &ht_tp LWIN A  &ht_tp LALT S     &ht_tp LCTRL D                      &ht_tp LSHFT F                   &kp G                                                                                                    &kp H   &ht_tp  LSHFT J &ht_tp RCTRL K    &ht_tp RALT L  &ht_tp RWIN SEMI    &kp SQT
             &kp GRAVE      &kp Z          &kp X             &kp C                               &lt NUM V                            &kp B          &caps_word     &kp LCTRL  &kp LSHFT &kp LGUI  &kp CAPS &lst_symbol                        &kp N   &kp M           &kp COMMA         &kp DOT        &kp QMARK           &kp PG_UP
-            &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &sk LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
+            &magic MAGIC 0 &kp HOME       &kp END           &kp LEFT                            &kp RIGHT                                       &kp BSPC       &lt NUM LSHFT  &kp DEL   &kp TAB   &kp RET  &kp SPACE                                  &kp UP          &kp DOWN          &kp FSLH       &kp EXCL            &kp PG_DN
             >;
         };
 
